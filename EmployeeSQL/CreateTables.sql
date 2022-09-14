@@ -30,6 +30,7 @@ create table dept_emp(
 	emp_no int, dept_no VARCHAR(5) NOT NULL
     ,FOREIGN KEY (emp_no) references employees(emp_no)
 	,FOREIGN KEY (dept_no) references departments(dept_no)
+	,PRIMARY KEY (emp_no,dept_no)
 );
 
 create table dept_manager(
@@ -37,12 +38,14 @@ create table dept_manager(
 	emp_no int
 	,FOREIGN KEY (emp_no) references employees(emp_no)
 	,FOREIGN KEY (dept_no) references departments(dept_no)
+	,PRIMARY KEY (emp_no,dept_no)
 );
 
 create table salaries(
-salary int NOT NULL,
+	salary int NOT NULL,
 	emp_no int
 	,FOREIGN KEY (emp_no) references employees(emp_no)
+	,PRIMARY KEY (emp_no,salary)
 );
 
 
